@@ -1,5 +1,5 @@
 # y
-此项目为自己自学项目
+此项目为自己自学项目1
 > A Vue.js project
 
 ## Build Setup
@@ -25,7 +25,7 @@ npm run e2e
 
 # run all tests
 npm test
-# all module 
+# all module
 1.移动端底部导航自定义图片(img + title)的2种方式
 card.vue---三元运算判断  info.vue--图片定义数组进行循环  demo.html--使用getAttribute进行切换菜单展示不同的内容
 2.移动端页面显示不显示v-if v-else
