@@ -9,7 +9,6 @@
     <business-component-a v-if="condtion == 'A'"></business-component-a>
     <business-component-b v-if="condtion == 'B'"></business-component-b>
     <business-component-c v-if="condtion == 'C'"></business-component-c>
-    <business-component-d v-if="condtion == 'D'"></business-component-d>
     <van-tabbar
       v-model="active"
       :safe-area-inset-bottom="true"
@@ -39,9 +38,8 @@
 import BusinessComponentA from './BusinessComponentA.vue' // 引入外部组件
 import BusinessComponentB from './BusinessComponentB.vue' // 引入
 import BusinessComponentC from '@/components/BusinessComponentC'
-import BusinessComponentD from '@/components/BusinessComponentD'
 export default {
-  components: {BusinessComponentA, BusinessComponentB, BusinessComponentC, BusinessComponentD}, // 注册组件
+  components: {BusinessComponentA, BusinessComponentB, BusinessComponentC}, // 注册组件
   data () {
     return {
       active: 0, // 当前选中标签的名称或索引值
@@ -67,12 +65,6 @@ export default {
           inactive: require('../../static/img/punch.png'),
           // 选中状态
           active: require('../../static/img/punchActive.png')
-        },
-        {
-          title: 'D',
-          inactive: require('../../static/img/record.png'),
-          // 选中状态
-          active: require('../../static/img/recordActive.png')
         }
       ]
     }
