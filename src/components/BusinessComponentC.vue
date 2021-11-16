@@ -23,6 +23,47 @@ export default {
      return {
 
      }
+   },
+   methods: {
+     // get post以及带参调取接口范例
+      getHomeInfo () {
+        // get带参数，以?拼接至接口后边，参数为bdMeetingId,俩种形式
+         this.$http.get(this.$APIS.GETMAPPER_BD + `?bdMeetingId=${this.bdMeetingId}`).then(res => {
+          // this.$http.get(this.$APIS.GETMAPPER_BD + '?bdMeetingId=this.bdMeetingId').then(res => {
+            if (res.status === 200) {
+              if(res.data.list.length>0) {
+                this.pepList = res.data.list
+                console.log(this.pepList, '返回值')
+              }
+            }
+          })
+        // get不带参
+         this.$http.get(this.$APIS.SIMULATION_GET_USER)
+            .then(res => {
+                // this.count = res.data == null ? res : res.data
+                let user = res.User||{}
+                console.log(user)
+            })
+            .catch(error => {
+                // this.$router.replace('/login')
+                // this.$toast({message:error.message})
+            })
+        // post带参
+          const params = {
+            id : item.id,
+            status : item.status == '0' ? '1':'0'
+          }
+        this.$http.post(this.$APIS.updatePendingRecord , params).then(res => {
+          console.log(res.data,'返回值')
+        }).catch(res => {
+        })
+      }
+   },
+   mounted () {
+    //  this.getHomeInfo()
+   },
+   created () {
+
    }
 }
 </script>

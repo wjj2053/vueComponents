@@ -60,10 +60,13 @@ export default {
   methods: {
     getHomeInfo () {
       this.$http.get(XXX).then(res => {
-        this.tabList = res.data // 获取到接口返回值this.tabList
+        this.tabList = '数据共享' // 获取到接口返回值this.tabList
+        this.goToNext(this.tabList) // 不同methods共享数据
       })
     },
-    goToNext () {
+    goToNext (data) {
+      console.log(data == this.tabList, '结果值') // true
+      console.log(data, 'data') // 共享数据
       // 路由跳转几种方式,带参不带参
       // this.$router.push('./card.vue')
       // this.$router.replace('/login') // 不带参直接跳转指定页面
