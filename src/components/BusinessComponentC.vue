@@ -13,6 +13,19 @@
       </div>
     </div>
 </template>
+
+<script>
+export default {
+  props: {
+  },
+   components: { },
+   data () {
+     return {
+
+     }
+   }
+}
+</script>
 <style lang="less" scoped>
 .box {
   margin: 10px;

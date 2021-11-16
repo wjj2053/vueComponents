@@ -1,6 +1,5 @@
 <template>
   <div>
-     <!-- 30秒间隔效验，不能重复打卡 -->
       <van-button type="primary" @click="reportBtn()" class="updateBtn" :disabled="updateDisableFlag">
           <span v-if="updateDisableFlag">打卡</span>
           <span v-else>打卡成功</span>
@@ -8,11 +7,9 @@
       <van-button type="info">
           <span>当前时间为:{{dataTime}}</span>
       </van-button>
-      <!-- 倒计时时间间隔展示 -->
        <van-button type="warning">
           <van-count-down :time="time" />
       </van-button>
-      <!-- vant-tabs底部导航切换自定义图标和title -->
       <van-tabbar
         v-model="active"
         active-color="#13C26B"

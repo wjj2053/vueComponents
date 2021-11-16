@@ -6,7 +6,10 @@
         爱君直如发，勿念江湖人。
       </div>
        <div class="box_body margin">
-        {{'我叫:' + infoList.name + ',来自:' + infoList.city}}
+        {{'介绍:' + infoList.description}}
+      </div>
+      <div>
+        <img :src="infoList.photo">
       </div>
     </div>
 </template>
@@ -28,7 +31,7 @@ export default {
   created () {
   },
   mounted () {
-    console.log(infoList,'infoList')
+    console.log(this.infoList,'infoList')
   },
   methods: {
   }
@@ -39,5 +42,8 @@ export default {
   display: block;
   text-align: initial;
   background: blueviolet;
+}
+img {
+ width: 100%;
 }
 </style>
